@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: your-org/flutter-builder-action@v1
+      - uses: svc-design/flutter-multi-platform-builder@v0.1.1
         with:
           platform: linux
           arch: x64
@@ -36,12 +36,33 @@ jobs:
     runs-on: ${{ matrix.platform == 'windows' && 'windows-latest' || matrix.platform == 'macos' && 'macos-latest' || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v4
-      - uses: your-org/flutter-builder-action@v1
+      - uses: svc-design/flutter-multi-platform-builder@v0.1.1
         with:
           platform: ${{ matrix.platform }}
 ```
 
-## Example: Flutter + Go Demo
+## 📦 Supported Outputs
+
+| Platform | Artifact Output                          |
+|----------|------------------------------------------|
+| Android  | `build/app/outputs/flutter-apk/app-release.apk` |
+| iOS      | `build/ios/ipa/*.ipa`, `.app.zip`        |
+| macOS    | `.dmg` file                              |
+| Windows  | `.zip`, `.msix`                          |
+| Linux    | `.AppImage`, `.zip`                      |
+
+## 🧩 Inputs
+
+| Name      | Required | Description                                    | Default |
+|-----------|----------|------------------------------------------------|---------|
+| `platform`| ✅        | Target platform (linux, windows, macos...)     | —       |
+| `arch`    | ❌        | Target architecture (x64, arm64)               | x64     |
+
+## 🚀 Output
+
+None yet — add output in future versions if needed.
+
+# Example: Flutter + Go Demo
 
 This repository contains a simple cross-platform demo located in [`demo/`](demo/). The demo shows how to call a Go library from Flutter using FFI. The Go code exports a single `HelloFromGo` function. A minimal Flutter app loads the compiled library and displays the returned string.
 
