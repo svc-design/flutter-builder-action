@@ -8,6 +8,11 @@ inputs:
     description: 'Target architecture'
     required: false
     default: 'x64'
+
 runs:
   using: 'node16'
   main: 'dist/index.js'
+
+branding:
+  icon: package
+  color: purple
