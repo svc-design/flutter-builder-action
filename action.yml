@@ -1,0 +1,13 @@
+name: 'Flutter Builder'
+description: 'Build Flutter project across platforms'
+inputs:
+  platform:
+    description: 'Target platform (linux, windows, macos, android, ios)'
+    required: true
+  arch:
+    description: 'Target architecture'
+    required: false
+    default: 'x64'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
