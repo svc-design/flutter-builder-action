@@ -1,4 +1,4 @@
-name: 'Flutter Builder'
+name: 'flutter-multi-platform-builder'
 description: 'Build Flutter project across platforms'
 inputs:
   platform:
